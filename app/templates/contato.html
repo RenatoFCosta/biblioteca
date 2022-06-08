@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+
+{% block conteudo %}
+    <h1>Entre em contato conosco:</h1><hr><br>
+        <b>Usuário:</b> {{ usuario.nome }} <br>
+        <b>CPF:</b> {{ usuario.cpf }} <br>
+        <b>Email:</b> {{ usuario.email }}
+    <br><br>
+    <a href="/index">voltar</a>
+{% endblock %}

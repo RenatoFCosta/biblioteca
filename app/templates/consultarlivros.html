@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consultarlivros.css') }}">
+
+    <title>Consultar Livros</title>
+</head>
+<body>
+    <form method="POST" action="">
+        <div class="grade">
+            <div class="titulos">
+                Campo</br>
+            </div>
+            <div>
+                <!-- O segundo valor em 'selected' estará selecionado inicialmente -->
+                <select name="campo">
+                    <option value="titulo" selected>Título</option>
+                    <option value="autor">Autor</option>
+                    <option value="medium">Médium</option>
+                    <option value="colecao">Coleção</option>
+                </select>
+                <input type="text" placeholder="texto a ser pesquisado" name="texto" size="80">
+                <input type="button" value="pesquisar">
+            </div>
+            <div class="observacao">
+                <br>
+                * Obs: 
+                Informe o nome ou parte dele a ser pesquisado. Não há diferença entre letras maiúsculas e minúsculas
+            </div>
+        </div>
+    </form>
+    {% if dados[0] %}
+    Existem dados disponíveis:
+    {{dados}}
+    {{livros}}
+    {% endif %}
+
+</body>
+</html>
